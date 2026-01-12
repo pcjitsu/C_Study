@@ -9,5 +9,5 @@ int main()
     int b = 22;
     swap(a, b);
     printf("main: a = %d, b = %d\n", a, b);
-    return EXIT_SUCCESS
-};
+    return EXIT_SUCCESS;
+}
