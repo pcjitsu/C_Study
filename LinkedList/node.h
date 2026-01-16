@@ -13,4 +13,6 @@ struct node *read_numbers(void);
 
 struct node *search_list(struct node *list, int n);
 
+struct node *delete_from_list(struct node *list, int n);
+
 #endif

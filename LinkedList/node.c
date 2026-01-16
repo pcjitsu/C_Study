@@ -52,3 +52,33 @@ struct node *search_list(struct node *list, int n)
     }
     return NULL;
 }
+
+struct node *delete_from_list(struct node *list, int n)
+{
+    // Keep track of current node and previous to allow for the ability displace node
+    struct node *curr, *prev;
+
+    for (
+        curr = list, prev = NULL;
+        curr != NULL && curr->value != n;
+        prev = curr, curr = curr->next)
+    {
+        if (curr == NULL)
+        {
+            // node of val n was not found, return pointer to list which is the pointer to the list;
+            return list;
+        }
+        if (prev == NULL)
+        {
+            // n is in the first node;
+            return curr;
+        }
+        else
+        {
+            prev->next = curr->next;
+            printf("Node of :%d was deleted!\n", curr->value);
+        }
+        free(curr);
+    }
+    return list;
+}

@@ -35,6 +35,17 @@ int main()
         printf("%d not found in the list.\n", search_value);
     }
 
+    int delete_val;
+    char choice;
+    printf("Do you want to delete a node? (Y/N): ");
+    scanf(" %c", &choice);
+    if (choice == 'Y' || choice == 'y')
+    {
+        printf("\nEnter a number to delete: ");
+        scanf("%d", &delete_val);
+        delete_from_list(first, delete_val);
+    }
+
     // Freeing all nodes when program terminates
     while (first != NULL)
     {
